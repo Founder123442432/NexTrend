@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import LoginButton from "../assets/buttons/loginbutton";
 import { Appcontext } from "../App";
+import { motion } from "framer-motion";
 import { toast, ToastContainer } from "react-toastify";
 import Adminbutton from "../assets/buttons/adminbutton";
 export default function NavBar() {
@@ -32,7 +33,9 @@ export default function NavBar() {
 
       <div className="flex flex-wrap items-center justify-between gap-4 w-full">
         <Link to="/">
-          <img
+          <motion.img
+            animate={{ transform: "scale(1)" }}
+            transition={{ duration: 1 }}
             src="src/assets/imgs/nextrend-high-resolution-logo-transparent.png"
             alt="logo"
             className="w-36"

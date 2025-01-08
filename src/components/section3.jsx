@@ -1,7 +1,15 @@
+import { motion } from "framer-motion";
+
 export default function Section3() {
   return (
     <div>
-      <div className="my-10 relative font-[sans-serif] before:absolute before:w-full before:h-full before:inset-0 before:bg-black/50 before:z-10">
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1.5 }}
+        viewport={{ once: true }}
+        className="my-10 relative font-[sans-serif] before:absolute before:w-full before:h-full before:inset-0 before:bg-black/50 before:z-10"
+      >
         <img
           src="src/assets/imgs/modern-blue-sports-shoe-design-close-up-fashionable-generated-by-ai_188544-19682.jpg"
           alt="Banner Image"
@@ -25,7 +33,7 @@ export default function Section3() {
             Getting started now
           </button>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

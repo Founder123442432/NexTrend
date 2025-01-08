@@ -9,8 +9,22 @@ import useTitle from "../customhooks/title";
 import useTop from "../customhooks/scrolltop";
 import Emptyhearticon from "../assets/buttons/emptyheart";
 import Fullhearticon from "../assets/buttons/fullheart";
-
+import { motion } from "framer-motion";
 export default function Men() {
+  const parvarients = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+      },
+    },
+  };
+  const childvarients = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+  };
+
   // const [like, setlike] = useState([]);
   // console.log(like);
   const TologIn = useNavigate();
@@ -52,10 +66,16 @@ export default function Men() {
             Explore Men's Products
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-xl:gap-4 gap-6">
+          <motion.div
+            variants={parvarients}
+            initial="hidden"
+            animate="visible"
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-xl:gap-4 gap-6"
+          >
             {itemsFilter == "All" ? (
               Men.map((product) => (
-                <div
+                <motion.div
+                  variants={childvarients}
                   key={product.id}
                   className="bg-white rounded-2xl p-5 cursor-pointer hover:-translate-y-2 transition-all relative"
                 >
@@ -90,13 +110,14 @@ export default function Men() {
                       </h4>
                     </div>
                   </Link>
-                </div>
+                </motion.div>
               ))
             ) : (
               <>
                 {Men.filter((product) => product.type == itemsFilter).map(
                   (product) => (
-                    <div
+                    <motion.div
+                      variants={childvarients}
                       key={product.id}
                       className="bg-white rounded-2xl p-5 cursor-pointer hover:-translate-y-2 transition-all relative"
                     >
@@ -134,12 +155,12 @@ export default function Men() {
                           </h4>
                         </div>
                       </Link>
-                    </div>
+                    </motion.div>
                   )
                 )}
               </>
             )}
-          </div>
+          </motion.div>
         </div>
       </div>
       {/*  Get offer */}
