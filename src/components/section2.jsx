@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import Explore from "../assets/buttons/Explore";
 import { motion } from "framer-motion";
-
+import men from "/src/assets/imgs/full-length-portrait-happy-satisfied-sportsman-jumping_171337-13457.jpg";
+import women from "/src/assets/imgs/full-length-portrait-slim-healthy-fitness-woman-posing_171337-10244.jpg";
+import kids from "/src/assets/imgs/full-length-portrait-smiling-little-girl-hat_171337-13769.jpg";
 export default function Section2() {
   return (
     <div className="flex flex-col items-center">
@@ -18,7 +20,7 @@ export default function Section2() {
         >
           <img
             className="hover:scale-150 transition-all z-0  duration-500"
-            src="src/assets/imgs/full-length-portrait-happy-satisfied-sportsman-jumping_171337-13457.jpg"
+            src={men}
           />
           <div className="z-50 flex justify-evenly bg-emerald-300 items-center py-5">
             <Link to="/men">
@@ -35,7 +37,7 @@ export default function Section2() {
         >
           <img
             className="hover:scale-150 transition-all z-0 duration-500"
-            src="src/assets/imgs/full-length-portrait-slim-healthy-fitness-woman-posing_171337-10244.jpg"
+            src={women}
           />
           <div className="flex cursor-pointer justify-evenly bg-emerald-300 items-center py-5">
             <Link to="/women">
@@ -52,7 +54,7 @@ export default function Section2() {
         >
           <img
             className="hover:scale-150 transition-all z-0 duration-500"
-            src="src/assets/imgs/full-length-portrait-smiling-little-girl-hat_171337-13769.jpg"
+            src={kids}
           />
           <div className="flex justify-evenly bg-emerald-300 items-center py-5">
             <Link to="/kids">

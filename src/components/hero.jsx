@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { Appcontext } from "../App";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import heroimg from "/src/assets/imgs/management-img.jpg";
 export default function Hero() {
   const { products } = useContext(Appcontext);
 
@@ -96,7 +97,7 @@ export default function Hero() {
             initial={{ width: "100px" }}
             animate={{ width: "100%" }}
             transition={{ duration: 1 }}
-            src="src/assets/imgs/management-img.jpg"
+            src={heroimg}
             className="w-full h-full object-contain rounded-lg"
             alt="Dining Experience"
           />

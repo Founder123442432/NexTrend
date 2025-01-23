@@ -3,7 +3,7 @@ import { useReducer } from "react";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { storage } from "../firebase/firebase";
 import { addDoc, collection } from "firebase/firestore";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { db } from "../firebase/firebase";
 import { Appcontext } from "../App";
@@ -126,7 +126,6 @@ export default function Addproduct() {
   }
   return (
     <section className="w-full mb-10">
-      <ToastContainer />
       <h1 className="text-3xl text-gray-800 font-extrabold text-left my-5 font-sans mx-7">
         Add Product
       </h1>

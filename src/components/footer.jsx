@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import logo from "/src/assets/imgs/nextrend-high-resolution-logo-ransparent.png";
 export default function Footer() {
   return (
     <footer className="bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900  py-14 px-16 font-sans tracking-wide relative">
@@ -69,11 +69,7 @@ export default function Footer() {
 
         <div className="flex items-center lg:justify-center">
           <Link>
-            <img
-              src="src/assets/imgs/nextrend-high-resolution-logo-ransparent.png"
-              alt="logo"
-              className="w-60"
-            />
+            <img src={logo} alt="logo" className="w-60" />
           </Link>
         </div>
       </div>

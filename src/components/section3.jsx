@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-
+import shoas from "/src/assets/imgs/modern-blue-sports-shoe-design-close-up-fashionable-generated-by-ai_188544-19682.jpg";
 export default function Section3() {
   return (
     <div>
@@ -11,7 +11,7 @@ export default function Section3() {
         className="my-10 relative font-[sans-serif] before:absolute before:w-full before:h-full before:inset-0 before:bg-black/50 before:z-10"
       >
         <img
-          src="src/assets/imgs/modern-blue-sports-shoe-design-close-up-fashionable-generated-by-ai_188544-19682.jpg"
+          src={shoas}
           alt="Banner Image"
           className="absolute inset-0 w-full h-full object-cover"
         />

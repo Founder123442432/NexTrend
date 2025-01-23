@@ -22,6 +22,7 @@ export default function Productpage() {
     setselectsize,
   } = useContext(Appcontext);
   const product = products?.find((product) => product.id == id) || [];
+
   useTitle(product.productname);
   useTop();
 

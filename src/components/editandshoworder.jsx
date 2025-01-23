@@ -2,7 +2,7 @@ import { useState } from "react";
 import useStopScrolling from "../customhooks/stopscroling";
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../firebase/firebase";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 export default function Editandshoworder({ setopenOrderD, orders, id }) {
   const showOrder = orders?.find((order) => order.id == id);
   const [EditStatusOpen, setEditStatusOpen] = useState(false);
@@ -27,7 +27,6 @@ export default function Editandshoworder({ setopenOrderD, orders, id }) {
   useStopScrolling();
   return (
     <div className="fixed    top-0 left-0 right-0 w-full h-full  z-50 bg-gradient-to-b from-gray-100 to-gray-200">
-      <ToastContainer />
       <svg
         onClick={() => setopenOrderD(null)}
         xmlns="http://www.w3.org/2000/svg"

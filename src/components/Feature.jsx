@@ -1,3 +1,6 @@
+import img1 from "/src/assets/imgs/payment-method.png";
+import img2 from "/src/assets/imgs/discount.png";
+import img3 from "/src/assets/imgs/delivery-truck.png";
 export default function Feature() {
   return (
     <div className="px-4 py-16 bg-orange-400  mx-auto   w-full md:px-24 lg:px-8 lg:py-20">
@@ -38,7 +41,7 @@ export default function Feature() {
       <div className="grid gap-8 row-gap-8 lg:grid-cols-3">
         <div className="sm:text-center">
           <div className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-indigo-50 sm:mx-auto sm:w-24 sm:h-24">
-            <img src="src/assets/imgs/payment-method.png" />
+            <img src={img1} />
           </div>
           <h6 className="mb-2 font-semibold leading-5">The good cheese</h6>
           <p className="max-w-md mb-3 text-sm text-gray-900 sm:mx-auto">
@@ -49,7 +52,7 @@ export default function Feature() {
         </div>
         <div className="sm:text-center">
           <div className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-indigo-50 sm:mx-auto sm:w-24 sm:h-24">
-            <img src="src/assets/imgs/discount.png" />
+            <img src={img2} />
           </div>
           <h6 className="mb-2 font-semibold leading-5">Chainsaw foal hay</h6>
           <p className="max-w-md mb-3 text-sm text-gray-900 sm:mx-auto">
@@ -60,7 +63,7 @@ export default function Feature() {
         </div>
         <div className="sm:text-center">
           <div className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-indigo-50 sm:mx-auto sm:w-24 sm:h-24">
-            <img src="src/assets/imgs/delivery-truck.png" />
+            <img src={img3} />
           </div>
           <h6 className="mb-2 font-semibold leading-5">Pick up truck</h6>
           <p className="max-w-md mb-3 text-sm text-gray-900 sm:mx-auto">

@@ -2,7 +2,7 @@ import useStopScrolling from "../customhooks/stopscroling";
 import { updateDoc, doc } from "firebase/firestore";
 import { db } from "../firebase/firebase";
 import { useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 export default function EdditProductViewer({
   setViewEditProduct,
@@ -57,7 +57,6 @@ export default function EdditProductViewer({
 
   return (
     <>
-      <ToastContainer />
       <section className="w-full mb-10 h-[100dvh]  fixed   overflow-auto top-0 z-50 backdrop-blur-3xl left-0">
         <h1 className="text-3xl text-gray-800 font-extrabold text-left my-5 font-sans mx-7">
           Edit Product

@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Appcontext } from "../App";
 import useTitle from "../customhooks/title";
-
+import loginimg from "/src/assets/imgs/login.jpg";
 export default function LogIn() {
   const { user, googlelogin, loginIn } = useContext(Appcontext);
   useTitle("log in");
@@ -11,7 +11,7 @@ export default function LogIn() {
       <div className="grid lg:grid-cols-3 md:grid-cols-2 items-center gap-4 h-full">
         <div className="max-md:order-1 lg:col-span-2 md:h-screen w-full bg-[#000842] md:rounded-tr-xl md:rounded-br-xl lg:p-12 p-8">
           <img
-            src="src/assets/imgs/login.jpg"
+            src={loginimg}
             className="lg:w-[70%] w-full h-full object-contain block mx-auto"
             alt="login-image"
           />

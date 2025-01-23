@@ -3,8 +3,9 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import LoginButton from "../assets/buttons/loginbutton";
 import { Appcontext } from "../App";
 import { motion } from "framer-motion";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import Adminbutton from "../assets/buttons/adminbutton";
+import navlogo from "/public/logo.png";
 export default function NavBar() {
   const [NavOpen, setNavOpen] = useState(false);
   const { user, cart } = useContext(Appcontext);
@@ -28,15 +29,13 @@ export default function NavBar() {
     };
   }, []);
   return (
-    <nav className="flex shadow-md py-4 px-4 sm:px-10 bg-white font-sans min-h-[70px] tracking-wide relative z-50">
-      <ToastContainer />
-
+    <nav className="flex relative shadow-md py-4 px-4 sm:px-10 bg-white font-sans min-h-[70px] tracking-wide  z-50">
       <div className="flex flex-wrap items-center justify-between gap-4 w-full">
         <Link to="/">
           <motion.img
             animate={{ transform: "scale(1)" }}
             transition={{ duration: 1 }}
-            src="src/assets/imgs/nextrend-high-resolution-logo-transparent.png"
+            src={navlogo}
             alt="logo"
             className="w-36"
           />
@@ -68,11 +67,7 @@ export default function NavBar() {
           <ul className="lg:flex gap-x-5 max-lg:space-y-3 max-lg:fixed max-lg:bg-white max-lg:w-1/2 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:p-6 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50">
             <li className="mb-6 hidden max-lg:block">
               <Link to="/">
-                <img
-                  src="src/assets/imgs/nextrend-high-resolution-logo-transparent.png"
-                  alt="logo"
-                  className="w-36"
-                />
+                <img src={navlogo} alt="logo" className="w-36" />
               </Link>
             </li>
             {["Home", "Men", "Women", "Kids", "About", "Contact"].map(

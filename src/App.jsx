@@ -12,6 +12,7 @@ import Contact from "./pages/contact";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth, db } from "./firebase/firebase";
 import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { createContext, useEffect, useReducer, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { collection, getDocs } from "firebase/firestore";
@@ -26,7 +27,13 @@ import About from "./pages/about";
 import Dashboard from "./admin/dashboard";
 import ManageProducts from "./admin/manageproducts";
 import Orders from "./admin/orders";
-import Loader from "./components/loader";
+import Adminprotection from "./protection/adminprotection";
+import Error401 from "./pages/401";
+import SearchBar from "./pages/searshbar";
+import SearshPage from "./pages/searshpage";
+import { motion } from "framer-motion";
+import Noresolts from "./pages/noresolts";
+
 export const Appcontext = createContext();
 // export const Admincontext = createContext();
 async function getProducts() {
@@ -200,7 +207,8 @@ function App() {
   const Shipping = 4.0;
   const Tax = 4.0;
   const ttc = { Shipping, Tax };
-
+  const [showSearch, setshowSearch] = useState(false);
+  const location = useLocation().pathname;
   return (
     <Appcontext.Provider
       value={{
@@ -232,13 +240,36 @@ function App() {
       }}
     >
       <ToastContainer />
+      {!location.includes("admin") && (
+        <motion.svg
+          initial={{ x: -300 }}
+          animate={{ x: 0 }}
+          transition={{ duration: 1 }}
+          onClick={() => setshowSearch((showSearch) => !showSearch)}
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          className="size-12 opacity-30 z-50 rounded-r-xl hover:opacity-100 transition-all bg-slate-600 text-white fixed top-40 cursor-pointer left-0"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="m15.75 15.75-2.489-2.489m0 0a3.375 3.375 0 1 0-4.773-4.773 3.375 3.375 0 0 0 4.774 4.774ZM21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+          />
+        </motion.svg>
+      )}
       <NavBar />
+      <SearchBar showSearch={showSearch} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="*" element={<Error404 />} />
+        <Route path="/401" element={<Error401 />} />
         <Route path="/Men" element={<Men />} />
         <Route path="/Women" element={<Women />} />
         <Route path="/kids" element={<Kids />} />
+        <Route path="/search/:search" element={<SearshPage />} />
         <Route
           path="/yourprofile"
           element={
@@ -247,6 +278,7 @@ function App() {
             </NoUserProtection>
           }
         />
+        <Route path="/noresolts" element={<Noresolts />} />
         <Route
           path="/Login"
           element={
@@ -268,7 +300,13 @@ function App() {
         />
         <Route path="/Contact" element={<Contact />} />
 
-        <Route element={<Admin />}>
+        <Route
+          element={
+            <Adminprotection>
+              <Admin />
+            </Adminprotection>
+          }
+        >
           <Route path="/admin/Addproduct" element={<Addproduct />} />
           <Route path="/admin/Dashboard" element={<Dashboard />} />
           <Route path="/admin/orders" element={<Orders />} />

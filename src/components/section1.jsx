@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import video from "/src/assets/videos/3205917-hd_1280_720_25fps.mp4";
 export default function Section1() {
   return (
     <div className="flex flex-col items-center">
@@ -13,13 +14,7 @@ export default function Section1() {
         Fashion Between Your Hands
       </motion.h2>
       <div className="flex justify-evenly font-mono w-full opacity-90">
-        <video
-          className="w-full"
-          src="src/assets/videos/3205917-hd_1280_720_25fps.mp4"
-          autoPlay
-          loop
-          muted
-        ></video>
+        <video className="w-full" src={video} autoPlay loop muted></video>
       </div>
     </div>
   );

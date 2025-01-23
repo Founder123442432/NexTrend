@@ -6,7 +6,7 @@ import Adminviewproduct from "../components/adminviewproduct";
 import { useState } from "react";
 import EdditProductViewer from "../components/edditproductviewer";
 import { deleteDoc, doc } from "firebase/firestore";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import { db } from "../firebase/firebase";
 import { useNavigate } from "react-router-dom";
 
@@ -42,7 +42,6 @@ export default function ManageProducts() {
   }
   return (
     <div className="relative">
-      <ToastContainer />
       {ViewEditProduct && (
         <EdditProductViewer
           products={products}
